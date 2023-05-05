@@ -22,7 +22,6 @@ body {
   font-family: "Outfit", sans-serif;
   font-size: 1.125rem;
   color: var(--clr-soft-blue);
-  background: url("../design/desktop-design.jpg") no-repeat;
 }
 
 a {
