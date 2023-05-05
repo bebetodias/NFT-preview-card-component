@@ -1,0 +1,143 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --clr-soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --cyan-50: hsl(178, 100%, 50%, 50%);
+  --very-dark-blue: hsl(217, 54%, 11%);
+  --very-dark-blue-card: hsl(216, 50%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  background: var(--very-dark-blue);
+  font-family: "Outfit", sans-serif;
+  font-size: 1.125rem;
+  color: var(--clr-soft-blue);
+  background: url("../design/desktop-design.jpg") no-repeat;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+a:hover {
+  color: var(--cyan);
+}
+
+h1 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 1.375rem 0 1rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+article {
+  width: 22rem;
+  padding: 1.5rem;
+  background: var(--very-dark-blue-card);
+  /* border: 1px solid white; */
+  border-radius: 1rem;
+}
+
+.photo {
+  display: flex;
+  position: relative;
+}
+
+.photo:hover::before {
+  content: "";
+  position: absolute;
+  background: var(--cyan-50) url(../images/icon-view.svg) no-repeat center
+    center;
+  width: 100%;
+  height: 100%;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.photo img {
+  width: 100%;
+}
+
+.price-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  padding: 20px 0 1.375rem;
+  border-bottom: 1px solid var(--very-dark-blue-line);
+}
+
+.price-info img {
+  margin-right: 0.5rem;
+  vertical-align: text-bottom;
+}
+
+.price {
+  color: var(--cyan);
+}
+
+.author {
+  padding: 1rem 0 0.625rem;
+  font-size: 1rem;
+}
+.author img {
+  border: 1px solid var(--white);
+  border-radius: 2rem;
+  width: 32px;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+/* .photo:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--cyan);
+} */
+
+.attribution {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  font-size: 11px;
+  color: var(--clr-soft-blue);
+  text-align: center;
+}
+.attribution a {
+  color: var(--white);
+  text-decoration: none;
+}
